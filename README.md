@@ -1,7 +1,7 @@
 # Brand New Day EV Theme
 
 A family of dark color themes for VS Code — custom UI palettes paired with vibrant,
-glowing syntax highlighting. Five variants, one extension.
+glowing syntax highlighting. Six variants, one extension.
 
 ## Variants
 
@@ -12,6 +12,7 @@ glowing syntax highlighting. Five variants, one extension.
 | **Neon** | Synthwave — cyan and magenta on near-black |
 | **Midnight** | Deep blue-black with soft blue accents |
 | **Emerald** | Near-black with emerald green accents |
+| **Amber** | Near-black with warm orange/gold accents |
 
 Switch between them anytime via `Cmd+Shift+P` / `Ctrl+Shift+P` → **Preferences: Color Theme**.
 
@@ -21,7 +22,7 @@ Switch between them anytime via `Cmd+Shift+P` / `Ctrl+Shift+P` → **Preferences
 |---|---|
 | **Brand New Day EV Theme** ![Brand New Day EV Theme](images/purple.png) | **Crimson** ![Crimson](images/crimson.png) |
 | **Neon** ![Neon](images/neon.png) | **Midnight** ![Midnight](images/midnight.png) |
-| **Emerald** ![Emerald](images/emerald.png) | |
+| **Emerald** ![Emerald](images/emerald.png) | **Amber** ![Amber](images/amber.png) |
 
 ## Installation
 

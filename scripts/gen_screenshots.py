@@ -12,6 +12,7 @@ VARIANTS = [
     ("brand-new-day-ev-theme-neon-color-theme.json", "neon"),
     ("brand-new-day-ev-theme-midnight-color-theme.json", "midnight"),
     ("brand-new-day-ev-theme-emerald-color-theme.json", "emerald"),
+    ("brand-new-day-ev-theme-amber-color-theme.json", "amber"),
 ]
 
 CODE_LINES = [

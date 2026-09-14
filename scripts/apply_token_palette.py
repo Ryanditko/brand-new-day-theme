@@ -20,6 +20,15 @@ BASE = {
 
 # New token palettes per variant. Purple is intentionally omitted (it IS the base).
 PALETTES = {
+    "brand-new-day-ev-theme-amber-color-theme.json": {
+        "keyword": "#FFB454",
+        "string": "#7DD3FC",
+        "variable": "#FFCC80",
+        "type": "#F4A261",
+        "func": "#fff6e8",
+        "comment": "#6b5a3f",
+        "quote": "#C084FC",
+    },
     "brand-new-day-ev-theme-crimson-color-theme.json": {
         "keyword": "#FF5C7A",
         "string": "#FFD166",
@@ -27,7 +36,7 @@ PALETTES = {
         "type": "#FF9EB0",
         "func": "#ffeef1",
         "comment": "#7a4b52",
-        "quote": "#46BDFF",
+        "quote": "#7DD3FC",
     },
     "brand-new-day-ev-theme-neon-color-theme.json": {
         "keyword": "#39F3FF",
