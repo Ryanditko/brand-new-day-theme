@@ -1,35 +1,35 @@
 # E.V. Theme
 
-Tema escuro roxo para VS Code, com paleta de UI customizada (sidebar, tabs, terminal, status bar, etc)
-e realce de sintaxe vibrante.
+A dark purple color theme for VS Code, with a custom UI palette (sidebar, tabs, terminal,
+status bar, etc) and vibrant syntax highlighting.
 
-## Instalação
+## Installation
 
-### Via arquivo `.vsix` (local)
+### Via `.vsix` file (local)
 
-1. Abra o VS Code.
+1. Open VS Code.
 2. `Ctrl+Shift+P` / `Cmd+Shift+P` → `Extensions: Install from VSIX...`
-3. Selecione o arquivo `ev-theme-1.0.0.vsix`.
-4. `Ctrl+Shift+P` → `Preferences: Color Theme` → escolha **E.V. Theme**.
+3. Select the `ev-theme-1.0.0.vsix` file.
+4. `Ctrl+Shift+P` → `Preferences: Color Theme` → choose **E.V. Theme**.
 
-### Via Marketplace (se publicado)
+### Via Marketplace (if published)
 
 ```
 ext install ryanditko.ev-theme
 ```
 
-## Desenvolvimento
+## Development
 
 ```bash
 npm install -g @vscode/vsce
 vsce package
 ```
 
-Isso gera o `.vsix` na raiz do projeto.
+This generates the `.vsix` file in the project root.
 
-## Créditos
+## Credits
 
-- As regras de realce de sintaxe (`tokenColors`) desta extensão foram originalmente derivadas do tema
-  open-source [1984](https://github.com/juanmnl/vs-1984), © juanmnl, licenciado sob MIT (ver `LICENSE`
-  para o aviso de copyright completo).
-- Paleta de UI (background, sidebar, tabs, terminal) e empacotamento por Ryanditko.
+- This extension's syntax highlighting rules (`tokenColors`) were originally derived from the
+  open-source [1984](https://github.com/juanmnl/vs-1984) theme, © juanmnl, licensed under MIT
+  (see `LICENSE` for the full copyright notice).
+- UI palette (background, sidebar, tabs, terminal) and packaging by Ryanditko.
