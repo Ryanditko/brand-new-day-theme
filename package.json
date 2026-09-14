@@ -2,7 +2,7 @@
   "name": "ev-theme",
   "displayName": "E.V. Theme",
   "description": "Dark purple color theme with a custom UI palette and glowing syntax highlighting.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "ryanditko",
   "engines": {
     "vscode": "^1.74.0"
