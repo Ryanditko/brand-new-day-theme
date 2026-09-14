@@ -15,7 +15,7 @@ status bar, etc) and vibrant syntax highlighting.
 ### Via Marketplace (if published)
 
 ```
-ext install ryanditko.ev-theme
+ext install ryanditko.ryanditko-ev-theme
 ```
 
 ## Development
