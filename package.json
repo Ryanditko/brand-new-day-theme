@@ -1,7 +1,7 @@
 {
-  "name": "purple-1984-theme",
-  "displayName": "Purple 1984",
-  "description": "Dark purple color theme — 1984's syntax highlighting combined with a custom purple UI palette.",
+  "name": "ev-theme",
+  "displayName": "E.V. Theme",
+  "description": "Dark purple color theme with a custom UI palette and glowing syntax highlighting.",
   "version": "1.0.0",
   "publisher": "ryanditko",
   "engines": {
@@ -13,20 +13,19 @@
   "keywords": [
     "theme",
     "purple",
-    "dark",
-    "1984"
+    "dark"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Ryanditko/vscode-purple-1984-theme"
+    "url": "https://github.com/Ryanditko/ev-theme"
   },
   "license": "MIT",
   "contributes": {
     "themes": [
       {
-        "label": "Purple 1984",
+        "label": "E.V. Theme",
         "uiTheme": "vs-dark",
-        "path": "./themes/purple-1984-color-theme.json"
+        "path": "./themes/ev-theme-color-theme.json"
       }
     ]
   }
