@@ -20,15 +20,6 @@ BASE = {
 
 # New token palettes per variant. Purple is intentionally omitted (it IS the base).
 PALETTES = {
-    "brand-new-day-ev-theme-classic-color-theme.json": {
-        "keyword": "#2DD4BF",
-        "string": "#FBBF24",
-        "variable": "#7DD3FC",
-        "type": "#38BDF8",
-        "func": "#eafcfb",
-        "comment": "#4b6b73",
-        "quote": "#F472B6",
-    },
     "brand-new-day-ev-theme-crimson-color-theme.json": {
         "keyword": "#FF5C7A",
         "string": "#FFD166",

@@ -8,7 +8,6 @@ os.makedirs(SHOTS_DIR, exist_ok=True)
 
 VARIANTS = [
     ("brand-new-day-ev-theme-color-theme.json", "purple"),
-    ("brand-new-day-ev-theme-classic-color-theme.json", "classic"),
     ("brand-new-day-ev-theme-crimson-color-theme.json", "crimson"),
     ("brand-new-day-ev-theme-neon-color-theme.json", "neon"),
     ("brand-new-day-ev-theme-midnight-color-theme.json", "midnight"),
@@ -102,11 +101,11 @@ def extract_token_palette(theme):
 HTML_TEMPLATE = """<!doctype html>
 <html><head><meta charset="utf-8"><style>
 * {{ box-sizing: border-box; margin: 0; padding: 0; }}
+html, body {{ width: 100%; height: 100%; background: {editor_bg}; }}
 body {{ font-family: -apple-system, 'Segoe UI', sans-serif; }}
 .window {{
-  width: 1280px; height: 800px; background: {editor_bg}; color: {editor_fg};
+  width: 100%; height: 100%; background: {editor_bg}; color: {editor_fg};
   display: flex; flex-direction: column; overflow: hidden;
-  border-radius: 8px;
 }}
 .titlebar {{
   height: 34px; background: {titlebar_bg}; display: flex; align-items: center;

@@ -1,7 +1,7 @@
 {
   "name": "brand-new-day-ev-theme",
   "displayName": "Brand New Day EV Theme",
-  "description": "A family of dark color themes for VS Code, with custom UI palettes and vibrant syntax highlighting — Purple, Classic (teal), Crimson, Neon, Midnight, and Emerald.",
+  "description": "A family of dark color themes for VS Code, with custom UI palettes and vibrant syntax highlighting — Purple, Crimson, Neon, Midnight, and Emerald.",
   "version": "2.0.0",
   "publisher": "ryanditko",
   "engines": {
@@ -14,8 +14,8 @@
     "theme",
     "dark",
     "purple",
-    "teal",
-    "neon"
+    "neon",
+    "emerald"
   ],
   "repository": {
     "type": "git",
@@ -28,11 +28,6 @@
         "label": "Brand New Day EV Theme",
         "uiTheme": "vs-dark",
         "path": "./themes/brand-new-day-ev-theme-color-theme.json"
-      },
-      {
-        "label": "Brand New Day EV Theme - Classic",
-        "uiTheme": "vs-dark",
-        "path": "./themes/brand-new-day-ev-theme-classic-color-theme.json"
       },
       {
         "label": "Brand New Day EV Theme - Crimson",
