@@ -810,23 +810,6 @@
       "settings": {
         "foreground": "#46BDFF"
       }
-    },
-    {
-      "scope": [
-        "entity.name.type.namespace.clojure",
-        "entity.name.type.clojure",
-        "storage.type.function.clojure",
-        "keyword.control.clojure"
-      ],
-      "settings": {
-        "foreground": "#bd93f9"
-      }
-    },
-    {
-      "scope": "punctuation.section.parens.begin.clojure",
-      "settings": {
-        "foreground": "#8a63ff"
-      }
     }
   ]
 }
