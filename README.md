@@ -16,6 +16,14 @@ glowing syntax highlighting. Six variants, one extension.
 
 Switch between them anytime via `Cmd+Shift+P` / `Ctrl+Shift+P` → **Preferences: Color Theme**.
 
+## Screenshots
+
+| | |
+|---|---|
+| **Brand New Day EV Theme** ![Brand New Day EV Theme](images/purple.png) | **Classic** ![Classic](images/classic.png) |
+| **Crimson** ![Crimson](images/crimson.png) | **Neon** ![Neon](images/neon.png) |
+| **Midnight** ![Midnight](images/midnight.png) | **Emerald** ![Emerald](images/emerald.png) |
+
 ## Installation
 
 ### Via Marketplace
