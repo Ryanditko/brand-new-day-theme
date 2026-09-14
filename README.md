@@ -1,4 +1,4 @@
-# E.V. Theme
+# Brand New Day EV Theme
 
 A dark purple color theme for VS Code, with a custom UI palette (sidebar, tabs, terminal,
 status bar, etc) and vibrant syntax highlighting.
@@ -9,13 +9,13 @@ status bar, etc) and vibrant syntax highlighting.
 
 1. Open VS Code.
 2. `Ctrl+Shift+P` / `Cmd+Shift+P` → `Extensions: Install from VSIX...`
-3. Select the `ev-theme-1.0.0.vsix` file.
-4. `Ctrl+Shift+P` → `Preferences: Color Theme` → choose **E.V. Theme**.
+3. Select the `brand-new-day-ev-theme-1.0.2.vsix` file.
+4. `Ctrl+Shift+P` → `Preferences: Color Theme` → choose **Brand New Day EV Theme**.
 
 ### Via Marketplace (if published)
 
 ```
-ext install ryanditko.ryanditko-ev-theme
+ext install ryanditko.brand-new-day-ev-theme
 ```
 
 ## Development

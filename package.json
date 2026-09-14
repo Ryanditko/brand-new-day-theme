@@ -1,8 +1,8 @@
 {
-  "name": "ryanditko-ev-theme",
-  "displayName": "E.V. Theme",
+  "name": "brand-new-day-ev-theme",
+  "displayName": "Brand New Day EV Theme",
   "description": "Dark purple color theme with a custom UI palette and glowing syntax highlighting.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "publisher": "ryanditko",
   "engines": {
     "vscode": "^1.74.0"
@@ -23,9 +23,9 @@
   "contributes": {
     "themes": [
       {
-        "label": "E.V. Theme",
+        "label": "Brand New Day EV Theme",
         "uiTheme": "vs-dark",
-        "path": "./themes/ev-theme-color-theme.json"
+        "path": "./themes/brand-new-day-ev-theme-color-theme.json"
       }
     ]
   }
