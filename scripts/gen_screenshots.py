@@ -41,18 +41,18 @@ def esc(s):
     return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
-def render_code(tok):
+def render_code(token_palette):
     COLORS = {
-        "keyword": "#FF16B0",
-        "string": "#DF81FC",
-        "number": "#FF16B0",
-        "func": "#fcfcfc",
-        "variable": "#96A1FF",
-        "prop": "#46BDFF",
-        "comment": "#525863",
-        "op": "#FF16B0",
-        "param": "#96A1FF",
-        "plain": "#f1f1f1",
+        "keyword": token_palette["keyword"],
+        "string": token_palette["string"],
+        "number": token_palette["keyword"],
+        "func": token_palette["func"],
+        "variable": token_palette["variable"],
+        "prop": token_palette["type"],
+        "comment": token_palette["comment"],
+        "op": token_palette["keyword"],
+        "param": token_palette["variable"],
+        "plain": token_palette["func"],
     }
     html = []
     for line in CODE_LINES:
@@ -88,7 +88,16 @@ def render_code(tok):
     return "\n".join(html)
 
 
-CODE_HTML = render_code(None)
+def extract_token_palette(theme):
+    by_name = {t["name"]: t["settings"]["foreground"] for t in theme["tokenColors"] if "foreground" in t.get("settings", {})}
+    return {
+        "keyword": by_name["Keyword"],
+        "string": by_name["String"],
+        "variable": by_name["Variable"],
+        "type": by_name["Entity"],
+        "func": by_name["Function"],
+        "comment": by_name["Comment"],
+    }
 
 HTML_TEMPLATE = """<!doctype html>
 <html><head><meta charset="utf-8"><style>
@@ -189,6 +198,7 @@ body {{ font-family: -apple-system, 'Segoe UI', sans-serif; }}
 def build_html(theme_path, variant_label):
     theme = json.load(open(os.path.join(THEMES_DIR, theme_path)))
     c = theme["colors"]
+    code_html = render_code(extract_token_palette(theme))
     html = HTML_TEMPLATE.format(
         editor_bg=c["editor.background"],
         editor_fg=c.get("editor.foreground", "#f1f1f1"),
@@ -205,7 +215,7 @@ def build_html(theme_path, variant_label):
         linehighlight=c["editor.lineHighlightBackground"],
         statusbar_bg=c["statusBar.background"],
         variant_label=variant_label.capitalize(),
-        code=CODE_HTML,
+        code=code_html,
     )
     return html
 
