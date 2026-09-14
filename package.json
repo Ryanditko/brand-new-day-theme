@@ -4,6 +4,7 @@
   "description": "A family of dark color themes for VS Code, with custom UI palettes and vibrant syntax highlighting — Purple, Crimson, Neon, Midnight, Emerald, and Amber.",
   "version": "3.0.0",
   "publisher": "ryanditko",
+  "icon": "images/icon.png",
   "engines": {
     "vscode": "^1.74.0"
   },

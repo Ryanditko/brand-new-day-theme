@@ -1,4 +1,4 @@
-# Brand New Day EV Theme
+![Brand New Day EV Theme](images/banner.png)
 
 A family of dark color themes for VS Code — custom UI palettes paired with vibrant,
 glowing syntax highlighting. Six variants, one extension.

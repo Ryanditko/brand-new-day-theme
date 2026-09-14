@@ -18,12 +18,16 @@ VARIANTS = [
 CODE_LINES = [
     ("comment", "// Brand New Day EV Theme — sample module"),
     ("keyword", "import", "plain", " { createServer } ", "keyword", "from", "string", " 'node:http';"),
+    ("keyword", "import", "plain", " { readFileSync } ", "keyword", "from", "string", " 'node:fs';"),
     ("blank",),
     ("keyword", "const", "variable", " PORT ", "op", "=", "number", " 8080", "plain", ";"),
+    ("keyword", "const", "variable", " MAX_RETRIES ", "op", "=", "number", " 3", "plain", ";"),
     ("blank",),
-    ("keyword", "function", "func", " handleRequest", "plain", "(", "param", "req, res", "plain", ") {"),
+    ("comment", "  // retry wrapper with exponential backoff"),
+    ("keyword", "async function", "func", " handleRequest", "plain", "(", "param", "req, res", "plain", ") {"),
     ("indent", "keyword", "  const", "variable", " payload ", "op", "=", "plain", " {"),
     ("indent2", "prop", "    status:", "string", " 'ok'", "plain", ","),
+    ("indent2", "prop", "    retries:", "number", " MAX_RETRIES", "plain", ","),
     ("indent2", "prop", "    uptime:", "func", " process", "plain", ".", "func", "uptime", "plain", "(),"),
     ("indent", "plain", "  };"),
     ("blank",),
@@ -88,6 +92,21 @@ def render_code(token_palette):
     return "\n".join(html)
 
 
+def render_minimap(token_palette):
+    palette_cycle = [
+        token_palette["keyword"], token_palette["string"], token_palette["variable"],
+        token_palette["type"], token_palette["func"], token_palette["comment"],
+    ]
+    widths = [38, 62, 90, 20, 70, 55, 84, 30, 66, 48, 76, 40, 58, 88, 22, 64, 42, 80, 34, 60,
+              50, 72, 28, 68, 44, 82, 36, 56]
+    lines = []
+    for i, w in enumerate(widths):
+        color = palette_cycle[i % len(palette_cycle)]
+        opacity = 0.85 if i % 4 else 0.5
+        lines.append(f"<div class='mline' style='width:{w}%;background:{color};opacity:{opacity}'></div>")
+    return "\n".join(lines)
+
+
 def extract_token_palette(theme):
     by_name = {t["name"]: t["settings"]["foreground"] for t in theme["tokenColors"] if "foreground" in t.get("settings", {})}
     return {
@@ -103,10 +122,20 @@ HTML_TEMPLATE = """<!doctype html>
 <html><head><meta charset="utf-8"><style>
 * {{ box-sizing: border-box; margin: 0; padding: 0; }}
 html, body {{ width: 100%; height: 100%; background: {editor_bg}; }}
-body {{ font-family: -apple-system, 'Segoe UI', sans-serif; }}
+body {{
+  font-family: -apple-system, 'Segoe UI', sans-serif;
+  display: flex; align-items: center; justify-content: center;
+  background:
+    radial-gradient(circle at 20% 15%, {accent}14 0%, transparent 45%),
+    radial-gradient(circle at 100% 100%, {accent}0d 0%, transparent 50%),
+    {editor_bg};
+}}
+.stage {{ padding: 56px; }}
 .window {{
-  width: 100%; height: 100%; background: {editor_bg}; color: {editor_fg};
+  width: 1280px; height: 760px; background: {editor_bg}; color: {editor_fg};
   display: flex; flex-direction: column; overflow: hidden;
+  border-radius: 10px; border: 1px solid {border};
+  box-shadow: 0 40px 90px -20px #000000aa, 0 0 0 1px #00000033, 0 0 60px -10px {accent}33;
 }}
 .titlebar {{
   height: 34px; background: {titlebar_bg}; display: flex; align-items: center;
@@ -138,6 +167,11 @@ body {{ font-family: -apple-system, 'Segoe UI', sans-serif; }}
 .editor {{ flex: 1; padding: 16px 20px; font-family: 'SF Mono', Menlo, monospace; font-size: 13px; line-height: 1.65; position: relative; }}
 .editor .line {{ white-space: pre; }}
 .editor .cursorline {{ background: {linehighlight}; margin: 0 -20px; padding: 0 20px; }}
+.minimap {{
+  width: 90px; border-left: 1px solid {border}; background: {sidebar_bg};
+  padding: 16px 14px; display: flex; flex-direction: column; gap: 4px; opacity: .9;
+}}
+.minimap .mline {{ height: 3px; border-radius: 2px; }}
 .statusbar {{
   height: 26px; background: {statusbar_bg}; display: flex; align-items: center;
   padding: 0 12px; gap: 16px; font-size: 11px; color: {editor_fg}; opacity: .85;
@@ -146,6 +180,7 @@ body {{ font-family: -apple-system, 'Segoe UI', sans-serif; }}
 .badge {{ background: {accent}; color: #000; border-radius: 8px; padding: 0 6px; font-size: 10px; font-weight: 700; }}
 </style></head>
 <body>
+<div class="stage">
 <div class="window">
   <div class="titlebar">
     <div class="dot" style="background:#ff5f57"></div>
@@ -181,6 +216,9 @@ body {{ font-family: -apple-system, 'Segoe UI', sans-serif; }}
         {code}
       </div>
     </div>
+    <div class="minimap">
+      {minimap}
+    </div>
   </div>
   <div class="statusbar">
     <span class="accent">●</span>
@@ -191,6 +229,7 @@ body {{ font-family: -apple-system, 'Segoe UI', sans-serif; }}
     <span class="badge">{variant_label}</span>
   </div>
 </div>
+</div>
 </body></html>
 """
 
@@ -198,7 +237,9 @@ body {{ font-family: -apple-system, 'Segoe UI', sans-serif; }}
 def build_html(theme_path, variant_label):
     theme = json.load(open(os.path.join(THEMES_DIR, theme_path)))
     c = theme["colors"]
-    code_html = render_code(extract_token_palette(theme))
+    token_palette = extract_token_palette(theme)
+    code_html = render_code(token_palette)
+    minimap_html = render_minimap(token_palette)
     html = HTML_TEMPLATE.format(
         editor_bg=c["editor.background"],
         editor_fg=c.get("editor.foreground", "#f1f1f1"),
@@ -216,6 +257,7 @@ def build_html(theme_path, variant_label):
         statusbar_bg=c["statusBar.background"],
         variant_label=variant_label.capitalize(),
         code=code_html,
+        minimap=minimap_html,
     )
     return html
 
