@@ -25,32 +25,32 @@
   "contributes": {
     "themes": [
       {
-        "label": "Brand New Day EV Theme",
+        "label": "Purple",
         "uiTheme": "vs-dark",
         "path": "./themes/brand-new-day-ev-theme-color-theme.json"
       },
       {
-        "label": "Brand New Day EV Theme - Crimson",
+        "label": "Crimson",
         "uiTheme": "vs-dark",
         "path": "./themes/brand-new-day-ev-theme-crimson-color-theme.json"
       },
       {
-        "label": "Brand New Day EV Theme - Neon",
+        "label": "Neon",
         "uiTheme": "vs-dark",
         "path": "./themes/brand-new-day-ev-theme-neon-color-theme.json"
       },
       {
-        "label": "Brand New Day EV Theme - Midnight",
+        "label": "Midnight",
         "uiTheme": "vs-dark",
         "path": "./themes/brand-new-day-ev-theme-midnight-color-theme.json"
       },
       {
-        "label": "Brand New Day EV Theme - Emerald",
+        "label": "Emerald",
         "uiTheme": "vs-dark",
         "path": "./themes/brand-new-day-ev-theme-emerald-color-theme.json"
       },
       {
-        "label": "Brand New Day EV Theme - Amber",
+        "label": "Amber",
         "uiTheme": "vs-dark",
         "path": "./themes/brand-new-day-ev-theme-amber-color-theme.json"
       }

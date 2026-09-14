@@ -7,7 +7,7 @@ glowing syntax highlighting. Six variants, one extension.
 
 | Variant | Palette |
 |---|---|
-| **Brand New Day EV Theme** (default) | Deep purple, glowing lilac accents |
+| **Purple** (default) | Deep purple, glowing lilac accents |
 | **Crimson** | Black with deep red accents |
 | **Neon** | Synthwave — cyan and magenta on near-black |
 | **Midnight** | Deep blue-black with soft blue accents |
@@ -20,7 +20,7 @@ Switch between them anytime via `Cmd+Shift+P` / `Ctrl+Shift+P` → **Preferences
 
 | | |
 |---|---|
-| **Brand New Day EV Theme** ![Brand New Day EV Theme](images/purple.png) | **Crimson** ![Crimson](images/crimson.png) |
+| **Purple** ![Purple](images/purple.png) | **Crimson** ![Crimson](images/crimson.png) |
 | **Neon** ![Neon](images/neon.png) | **Midnight** ![Midnight](images/midnight.png) |
 | **Emerald** ![Emerald](images/emerald.png) | **Amber** ![Amber](images/amber.png) |
 
