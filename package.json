@@ -1,0 +1,33 @@
+{
+  "name": "purple-1984-theme",
+  "displayName": "Purple 1984",
+  "description": "Dark purple color theme — 1984's syntax highlighting combined with a custom purple UI palette.",
+  "version": "1.0.0",
+  "publisher": "ryanditko",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "purple",
+    "dark",
+    "1984"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ryanditko/vscode-purple-1984-theme"
+  },
+  "license": "MIT",
+  "contributes": {
+    "themes": [
+      {
+        "label": "Purple 1984",
+        "uiTheme": "vs-dark",
+        "path": "./themes/purple-1984-color-theme.json"
+      }
+    ]
+  }
+}
